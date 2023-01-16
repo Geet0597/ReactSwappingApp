@@ -1,0 +1,37 @@
+.cardStyle {
+    width: 250px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0px 0px 10px #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.topBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.deleteBtn {
+    color: red !important;
+    font-size: 10px !important;
+}
+
+.btnBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nextBtnBox {
+    float: right;
+}
+
+.prevBtn {
+    color: black !important;
+}
+
+.nextBtn {
+    color: black !important;
+}

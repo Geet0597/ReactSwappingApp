@@ -1,0 +1,30 @@
+.mainGrid {
+    padding: 0px 50px 0px 50px !important;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 40px 40px 20px 40px;
+}
+
+.stepPaper {
+    height: calc(100vh - 9em);
+    width: calc(100vh - 28em);
+    background-color: #EEEEFF !important
+}
+
+.addBtn {
+    background-color: #EEEEFF !important;
+    color: black !important;
+}
+
+.stepLabel {
+    display: flex;
+    padding: 20px;
+}
+
+.stepContainer {
+    display: flex !important;
+}
