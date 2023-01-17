@@ -14,15 +14,13 @@ const AddModal = (props) => {
 
     return (
         <Dialog onClose={handleClose} open={openModal}>
-            <Box style={{ display: 'flex' }}>
-                <DialogTitle style={{ width: '350px' }}>Add Task</DialogTitle>
-                <CloseIcon style={{ padding: '15px', cursor: 'pointer' }} onClick={handleClose} />
-            </Box>
+            <CloseIcon style={{ padding: '15px', cursor: 'pointer', left: '85%', position: 'relative' }} onClick={handleClose} />
+            <DialogTitle style={{ width: '350px', justifyContent: 'center', display: 'flex', paddingTop: '0px' }}>Add Task</DialogTitle>
             <TextField
                 label="Add Title"
                 variant="outlined"
                 onChange={(e) => setTitle(+e.target.value)}
-                style={{ width: '300px', margin: '0 auto', backgroundColor: '#EEEEFF', marginBottom: '30px' }}
+                style={{ width: '350px', margin: '0 auto', backgroundColor: '#EEEEFF', marginBottom: '30px' }}
                 helperText='Please insert only numbers'
                 sx={{
                     '& .MuiOutlinedInput-root': {
@@ -32,7 +30,7 @@ const AddModal = (props) => {
             />
             <Button
                 onClick={() => { title && addCard(title); handleClose() }}
-                style={{ backgroundColor: '#EEEEFF', color: 'black', width: '100px', margin: '0 auto', marginBottom: '30px' }}
+                style={{ backgroundColor: '#EEEEFF', color: 'black', width: '100px', marginBottom: '30px', marginLeft: '25px' }}
             >
                 Add Task
             </Button>
