@@ -10,7 +10,7 @@
 }
 
 .stepPaper {
-    height: auto;
+    height: calc(100vh - 6em);
     overflow: auto;
     width: calc(100vh - 28em);
     background-color: #EEEEFF !important

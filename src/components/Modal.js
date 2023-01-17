@@ -1,7 +1,7 @@
 import * as React from 'react';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-import { Button, TextField, Box } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 const AddModal = (props) => {
