@@ -6,6 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 import SearchField from './searchField';
 import styles from './mainLayout.module.scss';
 import CardComponent from './card';
+import AddModal from './Modal';
 
 const MainLayout = () => {
     const initialData = [
@@ -77,8 +78,9 @@ const MainLayout = () => {
     const { topContainer, mainGrid, stepPaper, addBtn, stepLabel, stepContainer } = styles;
     const [data, setData] = React.useState(initialData);
     const [showErrorMsg, setShowErrorMsg] = React.useState(false);
+    const [openModal, setOpenModal] = React.useState(false);
 
-    const addCard = () => {
+    const addCard = (value) => {
         const newData = [...data];
         const section = newData.find(data => data.label === 'STEP 1');
         let array = [];
@@ -93,7 +95,7 @@ const MainLayout = () => {
         const cardToAdd = {
             id: nextValue + 1,
             parentId: 1,
-            label: nextValue + 1
+            label: value
         }
         section.cards.push(cardToAdd);
         setData(newData);
@@ -171,7 +173,7 @@ const MainLayout = () => {
             <Grid item xs={12} className={mainGrid}>
                 <Box className={topContainer}>
                     <SearchField findData={findData} />
-                    <Button startIcon={<AddIcon />} onClick={addCard} className={addBtn}>Add Task</Button>
+                    <Button startIcon={<AddIcon />} onClick={() => setOpenModal(true)} className={addBtn}>Add Task</Button>
                 </Box>
                 {showErrorMsg && <h1>No Such data found</h1>}
                 <Grid container justifyContent="center" spacing={2} className={stepContainer}>
@@ -196,6 +198,7 @@ const MainLayout = () => {
                     ))}
                 </Grid>
             </Grid>
+            <AddModal openModal={openModal} onClose={() => setOpenModal(false)} addCard={addCard} />
         </Grid>
     );
 }
