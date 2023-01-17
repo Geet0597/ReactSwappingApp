@@ -79,6 +79,7 @@ const MainLayout = () => {
     const [data, setData] = React.useState(initialData);
     const [showErrorMsg, setShowErrorMsg] = React.useState(false);
     const [openModal, setOpenModal] = React.useState(false);
+    const [deletedData, setDeletedData] = React.useState([]);
 
     const addCard = (value) => {
         const newData = [...data];
@@ -134,6 +135,7 @@ const MainLayout = () => {
         const parentIndex = newData.findIndex(data => data.id === card.parentId);
         array.splice(index, 1);
         newData[parentIndex].cards.splice(index, 1);
+        setDeletedData(newData);
         setData(newData);
     }
 
@@ -158,11 +160,13 @@ const MainLayout = () => {
                 setData(newData);
                 setShowErrorMsg(false);
             } else {
-                setData(initialData);
+                setData(deletedData.length > 0 ? data : initialData);
+                setDeletedData([]);
                 setShowErrorMsg(true);
             }
         } else {
             setData(initialData);
+            setDeletedData([]);
             setShowErrorMsg(false);
         }
     }
