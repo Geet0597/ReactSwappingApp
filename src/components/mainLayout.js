@@ -98,6 +98,7 @@ const MainLayout = () => {
             label: value
         }
         section.cards.push(cardToAdd);
+        newData.map(data => data.cards.sort((a, b) => a.label - b.label));
         setData(newData);
     }
 
@@ -108,12 +109,14 @@ const MainLayout = () => {
             newData[currentStep].cards.splice(index, 1);
             card.parentId = card.parentId + 1;
             newData[currentStep + 1].cards.push(card);
+            newData.map(data => data.cards.sort((a, b) => a.label - b.label));
             setData(newData);
         } else {
             const currentStep = newData.findIndex(data => data.id === card.parentId);
             newData[currentStep].cards.splice(index, 1);
             card.parentId = card.parentId - 1;
             newData[currentStep - 1].cards.push(card);
+            newData.map(data => data.cards.sort((a, b) => a.label - b.label));
             setData(newData);
         }
     }
