@@ -136,6 +136,7 @@ const MainLayout = () => {
         array.splice(index, 1);
         newData[parentIndex].cards.splice(index, 1);
         setDeletedData(newData);
+        localStorage.setItem('deletedData', JSON.stringify(newData));
         setData(newData);
     }
 
@@ -165,7 +166,7 @@ const MainLayout = () => {
                 setShowErrorMsg(true);
             }
         } else {
-            setData(initialData);
+            setData(JSON.parse(localStorage.getItem('deletedData')));
             setDeletedData([]);
             setShowErrorMsg(false);
         }
