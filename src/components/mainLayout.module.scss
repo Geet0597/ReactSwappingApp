@@ -1,12 +1,10 @@
-.mainGrid {
-    padding: 0px 50px 0px 50px !important;
-}
-
 .topContainer {
     display: flex;
     justify-content: space-between;
     position: relative;
-    margin: 40px 40px 20px 40px;
+    margin: 40px 125px 20px 125px;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 .stepPaper {

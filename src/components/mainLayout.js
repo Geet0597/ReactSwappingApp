@@ -75,7 +75,7 @@ const MainLayout = () => {
             ]
         },
     ]
-    const { topContainer, mainGrid, stepPaper, addBtn, stepLabel, stepContainer } = styles;
+    const { topContainer, stepPaper, addBtn, stepLabel, stepContainer } = styles;
     const [data, setData] = React.useState(initialData);
     const [showErrorMsg, setShowErrorMsg] = React.useState(false);
     const [openModal, setOpenModal] = React.useState(false);
@@ -174,7 +174,7 @@ const MainLayout = () => {
 
     return (
         <Grid sx={{ flexGrow: 1 }} container spacing={2}>
-            <Grid item xs={12} className={mainGrid}>
+            <Grid item xs={12}>
                 <Box className={topContainer}>
                     <SearchField findData={findData} />
                     <Button startIcon={<AddIcon />} onClick={() => setOpenModal(true)} className={addBtn}>Add Task</Button>
